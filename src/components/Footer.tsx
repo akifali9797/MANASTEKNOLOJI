@@ -104,7 +104,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-6">
               <div className="relative overflow-hidden rounded-xl bg-white ring-1 ring-white/70 shadow-lg shadow-black/25">
                 <img
-                  src="/images/logo.png"
+                  src={`${import.meta.env.BASE_URL}images/logo.png`}
                   alt="Manas Teknoloji logosu"
                   className="h-12 w-12 object-contain p-1"
                 />

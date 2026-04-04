@@ -54,7 +54,7 @@ export default function About() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden">
               <img
-                src="/images/about-bg.jpg"
+                src={`${import.meta.env.BASE_URL}images/about-bg.jpg`}
                 alt="Manas Teknoloji Altyapı"
                 className="w-full h-[400px] lg:h-[500px] object-cover rounded-2xl"
               />

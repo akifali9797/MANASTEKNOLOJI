@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const stats = [
   { value: 3000, suffix: '+', label: 'Kurulan Merkez' },
-  { value: 10, suffix: '+', label: 'Yıllık Deneyim' },
+  { value: 19, suffix: '+', label: 'Yıllık Deneyim' },
   { value: 500, suffix: '+', label: 'Mutlu Müşteri' },
   { value: 81, suffix: '', label: 'İlde Hizmet' },
 ];
@@ -54,7 +54,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-bg.jpg"
+          src={`${import.meta.env.BASE_URL}images/hero-bg.jpg`}
           alt="E-Spor Merkezi"
           className="w-full h-full object-cover"
         />

@@ -32,7 +32,7 @@ export default function Header() {
           <a href="#hero" className="flex items-center gap-4 group">
             <div className="relative overflow-hidden rounded-2xl bg-white ring-1 ring-white/70 shadow-lg shadow-black/25 transition-all duration-300 group-hover:scale-105 group-hover:ring-brand-red/40 group-hover:shadow-brand-red/20">
               <img
-                src="/images/logo.png"
+                src={`${import.meta.env.BASE_URL}images/logo.png`}
                 alt="Manas Teknoloji logosu"
                 className="h-14 w-14 object-contain p-1.5 sm:h-16 sm:w-16"
               />
