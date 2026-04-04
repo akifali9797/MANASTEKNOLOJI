@@ -46,6 +46,14 @@ const socialLinks = [
   },
 ];
 
+const quickLinks = [
+  { label: 'Anasayfa', href: '#hero' },
+  { label: 'Hakkımızda', href: '#about' },
+  { label: 'Hizmetler', href: '#services' },
+  { label: 'Çözümler', href: '#solutions' },
+  { label: 'İletişim', href: '#contact' },
+];
+
 function getSocialStyles(name: string) {
   switch (name) {
     case 'Instagram':
@@ -146,10 +154,10 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-6">Hızlı Bağlantılar</h3>
             <ul className="space-y-3">
-              {['Anasayfa', 'Hakkımızda', 'Hizmetler', 'Çözümler', 'İletişim'].map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase()}`} className="text-brand-gray text-sm hover:text-brand-red transition-colors duration-300">
-                    {link}
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="text-brand-gray text-sm hover:text-brand-red transition-colors duration-300">
+                    {link.label}
                   </a>
                 </li>
               ))}

@@ -88,17 +88,17 @@ export default function About() {
             </h2>
 
             <p className="text-brand-gray text-lg leading-relaxed mb-8">
-              Manas Teknoloji 2007 yılında Ar-Ge amacli actigi ilk internet kafesiyle sektore
-              giris yapmistir. Projeleriyle bir cok basarili girisimciye ilham kaynagi olmus,
-              internet kafeciligi daha modern hale getirmis, sektoru ayakta tutacak dokunuslar
-              sayesinde yuzlerce insani sektore cekerek istihdam yaratmistir.
+              Manas Teknoloji 2007 yılında Ar-Ge amaçlı açtığı ilk internet kafesiyle sektöre
+              giriş yapmıştır. Projeleriyle birçok başarılı girişimciye ilham kaynağı olmuş,
+              internet kafeciliği daha modern hale getirmiş, sektörü ayakta tutacak dokunuşlar
+              sayesinde yüzlerce insanı sektöre çekerek istihdam yaratmıştır.
             </p>
 
             <p className="text-brand-gray leading-relaxed mb-10">
-              Turkiye'nin ilk yiyecek ve icecek agirlikli internet kafesini 2009 yilinda acarak
-              ayda yaklasik 100.000 dolar ciroyla sektore olan bakis acisini degistirmeyi
-              basarmistir. Bu minvalde kurumsal isletmeler, e-spor salonlari ve universitelerde
-              disksiz sistem kurulumlari ile dizi, film ve program arsivi destegi sunmaya devam
+              Türkiye'nin ilk yiyecek ve içecek ağırlıklı internet kafesini 2009 yılında açarak
+              ayda yaklaşık 100.000 dolar ciroyla sektöre olan bakış açısını değiştirmeyi
+              başarmıştır. Bu minvalde kurumsal işletmeler, e-spor salonları ve üniversitelerde
+              disksiz sistem kurulumları ile dizi, film ve program arşivi desteği sunmaya devam
               etmektedir.
             </p>
 
