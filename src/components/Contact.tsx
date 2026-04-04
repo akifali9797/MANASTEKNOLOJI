@@ -46,7 +46,6 @@ export default function Contact() {
             aria-label="Manas Teknoloji telefon numarasını ara"
             className="glass-card group relative block overflow-hidden rounded-xl p-4 sm:p-6 hover:border-brand-red/30 transition-all duration-300"
           >
-            <div className="absolute inset-x-6 bottom-0 h-24 rounded-full bg-brand-red/20 blur-3xl transition-opacity duration-300 group-hover:opacity-100 opacity-80" />
             <div className="relative flex items-start gap-3 sm:block sm:text-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-brand-red/10 rounded-lg flex items-center justify-center text-brand-red flex-shrink-0 mx-0 sm:mx-auto mb-0 sm:mb-4">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -68,7 +67,6 @@ export default function Contact() {
             aria-label="Manas Teknoloji'ye e-posta gonder"
             className="glass-card group relative block overflow-hidden rounded-xl p-4 sm:p-6 hover:border-brand-red/30 transition-all duration-300"
           >
-            <div className="absolute inset-x-6 bottom-0 h-24 rounded-full bg-brand-red/20 blur-3xl transition-opacity duration-300 group-hover:opacity-100 opacity-80" />
             <div className="relative flex items-start gap-3 sm:block sm:text-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-brand-red/10 rounded-lg flex items-center justify-center text-brand-red flex-shrink-0 mx-0 sm:mx-auto mb-0 sm:mb-4">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -92,7 +90,6 @@ export default function Contact() {
             aria-label="Manas Teknoloji adresini haritada ac"
             className="glass-card group relative block overflow-hidden rounded-xl p-4 sm:p-6 hover:border-brand-red/30 transition-all duration-300"
           >
-            <div className="absolute inset-x-6 bottom-0 h-24 rounded-full bg-brand-red/20 blur-3xl transition-opacity duration-300 group-hover:opacity-100 opacity-80" />
             <div className="relative flex items-start gap-3 sm:block sm:text-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-brand-red/10 rounded-lg flex items-center justify-center text-brand-red flex-shrink-0 mx-0 sm:mx-auto mb-0 sm:mb-4">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
