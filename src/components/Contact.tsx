@@ -44,9 +44,10 @@ export default function Contact() {
           <a
             href="tel:+905354302875"
             aria-label="Manas Teknoloji telefon numarasını ara"
-            className="glass-card block rounded-xl p-4 sm:p-6 hover:border-brand-red/30 transition-all duration-300"
+            className="glass-card group relative block overflow-hidden rounded-xl p-4 sm:p-6 hover:border-brand-red/30 transition-all duration-300"
           >
-            <div className="flex items-start gap-3 sm:block sm:text-center">
+            <div className="absolute inset-x-6 bottom-0 h-24 rounded-full bg-brand-red/20 blur-3xl transition-opacity duration-300 group-hover:opacity-100 opacity-80" />
+            <div className="relative flex items-start gap-3 sm:block sm:text-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-brand-red/10 rounded-lg flex items-center justify-center text-brand-red flex-shrink-0 mx-0 sm:mx-auto mb-0 sm:mb-4">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -65,9 +66,10 @@ export default function Contact() {
           <a
             href="mailto:manasteknoloji@icloud.com"
             aria-label="Manas Teknoloji'ye e-posta gonder"
-            className="glass-card block rounded-xl p-4 sm:p-6 hover:border-brand-red/30 transition-all duration-300"
+            className="glass-card group relative block overflow-hidden rounded-xl p-4 sm:p-6 hover:border-brand-red/30 transition-all duration-300"
           >
-            <div className="flex items-start gap-3 sm:block sm:text-center">
+            <div className="absolute inset-x-6 bottom-0 h-24 rounded-full bg-brand-red/20 blur-3xl transition-opacity duration-300 group-hover:opacity-100 opacity-80" />
+            <div className="relative flex items-start gap-3 sm:block sm:text-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-brand-red/10 rounded-lg flex items-center justify-center text-brand-red flex-shrink-0 mx-0 sm:mx-auto mb-0 sm:mb-4">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -88,9 +90,10 @@ export default function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Manas Teknoloji adresini haritada ac"
-            className="glass-card block rounded-xl p-4 sm:p-6 hover:border-brand-red/30 transition-all duration-300"
+            className="glass-card group relative block overflow-hidden rounded-xl p-4 sm:p-6 hover:border-brand-red/30 transition-all duration-300"
           >
-            <div className="flex items-start gap-3 sm:block sm:text-center">
+            <div className="absolute inset-x-6 bottom-0 h-24 rounded-full bg-brand-red/20 blur-3xl transition-opacity duration-300 group-hover:opacity-100 opacity-80" />
+            <div className="relative flex items-start gap-3 sm:block sm:text-center">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-brand-red/10 rounded-lg flex items-center justify-center text-brand-red flex-shrink-0 mx-0 sm:mx-auto mb-0 sm:mb-4">
                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
