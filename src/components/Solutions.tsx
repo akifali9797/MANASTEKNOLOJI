@@ -98,14 +98,16 @@ export default function Solutions() {
               <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-brand-red/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative">
-                {/* Number */}
-                <div className="text-4xl sm:text-5xl font-black text-white/5 group-hover:text-brand-red/10 transition-colors duration-300 mb-3 sm:mb-4">
-                  {solution.num}
-                </div>
+                <div className="mb-4 flex items-center justify-between gap-3 sm:mb-5">
+                  {/* Number */}
+                  <div className="text-3xl sm:text-5xl font-black leading-none text-white/5 group-hover:text-brand-red/10 transition-colors duration-300">
+                    {solution.num}
+                  </div>
 
-                {/* Icon */}
-                <div className="w-11 h-11 sm:w-14 sm:h-14 bg-brand-red/10 rounded-lg sm:rounded-xl flex items-center justify-center text-brand-red mb-4 sm:mb-5 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
-                  {solution.icon}
+                  {/* Icon */}
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 bg-brand-red/10 rounded-lg sm:rounded-xl flex items-center justify-center text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                    {solution.icon}
+                  </div>
                 </div>
 
                 {/* Title */}
