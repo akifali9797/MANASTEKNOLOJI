@@ -22,24 +22,24 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-brand-dark/95 backdrop-blur-xl shadow-lg shadow-black/20 py-3'
-          : 'bg-brand-dark/40 backdrop-blur-xl py-4 lg:bg-transparent lg:backdrop-blur-none'
+          ? 'bg-brand-dark/95 backdrop-blur-xl shadow-lg shadow-black/20 py-2.5 sm:py-3'
+          : 'bg-brand-dark/40 backdrop-blur-xl py-3 sm:py-4 lg:bg-transparent lg:backdrop-blur-none'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-3 sm:gap-4 group">
-            <div className="relative overflow-hidden rounded-2xl bg-white ring-1 ring-white/70 shadow-lg shadow-black/25 transition-all duration-300 group-hover:scale-105 group-hover:ring-brand-red/40 group-hover:shadow-brand-red/20">
+          <a href="#hero" className="flex items-center gap-2.5 sm:gap-4 group">
+            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-white ring-1 ring-white/70 shadow-lg shadow-black/25 transition-all duration-300 group-hover:scale-105 group-hover:ring-brand-red/40 group-hover:shadow-brand-red/20">
               <img
                 src={`${import.meta.env.BASE_URL}images/logo.png`}
                 alt="Manas Teknoloji logosu"
-                className="h-11 w-11 object-contain p-1 sm:h-16 sm:w-16"
+                className="h-10 w-10 object-contain p-1 sm:h-14 sm:w-14 lg:h-16 lg:w-16"
               />
             </div>
-            <div>
-              <span className="text-lg sm:text-xl font-bold text-white tracking-tight">MANAS</span>
-              <span className="text-lg sm:text-xl font-light text-brand-red tracking-tight ml-1">TEKNOLOJİ</span>
+            <div className="leading-none">
+              <span className="text-base sm:text-xl font-bold text-white tracking-tight">MANAS</span>
+              <span className="text-base sm:text-xl font-light text-brand-red tracking-tight ml-1">TEKNOLOJİ</span>
             </div>
           </a>
 
@@ -73,7 +73,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden flex flex-col gap-1.5 p-2 group"
+            className="lg:hidden flex flex-col gap-1.5 p-1.5 group"
           >
             <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
             <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
@@ -83,14 +83,14 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <nav className="lg:hidden mt-3 pb-3 border-t border-white/10 animate-slide-down">
-            <div className="flex flex-col gap-1 pt-3">
+          <nav className="lg:hidden mt-2.5 pb-2.5 border-t border-white/10 animate-slide-down">
+            <div className="flex flex-col gap-1 pt-2.5">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="px-3 py-2.5 text-sm font-medium text-brand-gray hover:text-white hover:bg-white/5 rounded-lg transition-all duration-300"
+                  className="px-3 py-2 text-sm font-medium text-brand-gray hover:text-white hover:bg-white/5 rounded-lg transition-all duration-300"
                 >
                   {item.label}
                 </a>
@@ -98,7 +98,7 @@ export default function Header() {
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 mx-3 bg-brand-red hover:bg-brand-red-dark text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 text-center"
+                className="mt-2 mx-3 bg-brand-red hover:bg-brand-red-dark text-white text-sm font-semibold px-5 py-2 rounded-lg transition-all duration-300 text-center"
               >
                 Teklif Al
               </a>
