@@ -88,31 +88,31 @@ export default function Solutions() {
         </div>
 
         {/* Solutions Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className="group relative glass-card rounded-2xl p-8 hover:border-brand-red/30 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+              className="group relative glass-card rounded-xl sm:rounded-2xl p-5 sm:p-8 hover:border-brand-red/30 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
             >
               {/* Hover gradient */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-red/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-brand-red/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative">
                 {/* Number */}
-                <div className="text-5xl font-black text-white/5 group-hover:text-brand-red/10 transition-colors duration-300 mb-4">
+                <div className="text-4xl sm:text-5xl font-black text-white/5 group-hover:text-brand-red/10 transition-colors duration-300 mb-3 sm:mb-4">
                   {solution.num}
                 </div>
 
                 {/* Icon */}
-                <div className="w-14 h-14 bg-brand-red/10 rounded-xl flex items-center justify-center text-brand-red mb-5 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
+                <div className="w-11 h-11 sm:w-14 sm:h-14 bg-brand-red/10 rounded-lg sm:rounded-xl flex items-center justify-center text-brand-red mb-4 sm:mb-5 group-hover:bg-brand-red group-hover:text-white transition-all duration-300">
                   {solution.icon}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-white mb-2">{solution.title}</h3>
+                <h3 className="text-base sm:text-lg font-bold text-white mb-2">{solution.title}</h3>
 
                 {/* Description */}
-                <p className="text-brand-gray text-sm leading-relaxed">{solution.desc}</p>
+                <p className="text-[13px] sm:text-sm leading-relaxed text-brand-gray">{solution.desc}</p>
               </div>
             </div>
           ))}
