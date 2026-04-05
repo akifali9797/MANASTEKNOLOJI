@@ -75,12 +75,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
-        <div className="mt-12 sm:mt-16 inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 rounded-full px-5 py-2 mb-8 animate-fade-in-up">
-          <span className="w-2 h-2 bg-brand-red rounded-full animate-pulse" />
-          <span className="text-brand-red text-sm font-semibold tracking-wide">Türkiye'nin #1 Disksiz Sistem Çözüm Ortağı</span>
-        </div>
-
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 animate-fade-in-up delay-100">
           E-Spor Merkezleri &<br />
@@ -127,6 +121,12 @@ export default function Hero() {
               <div className="text-sm text-brand-gray font-medium">{stat.label}</div>
             </div>
           ))}
+        </div>
+
+        {/* Badge */}
+        <div className="mt-8 sm:mt-10 inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 rounded-full px-5 py-2 animate-fade-in-up delay-500">
+          <span className="w-2 h-2 bg-brand-red rounded-full animate-pulse" />
+          <span className="text-brand-red text-sm font-semibold tracking-wide">Türkiye'nin #1 Disksiz Sistem Çözüm Ortağı</span>
         </div>
       </div>
 
