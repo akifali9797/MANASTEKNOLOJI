@@ -76,7 +76,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 rounded-full px-5 py-2 mb-8 animate-fade-in-up">
+        <div className="mt-12 sm:mt-16 inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 rounded-full px-5 py-2 mb-8 animate-fade-in-up">
           <span className="w-2 h-2 bg-brand-red rounded-full animate-pulse" />
           <span className="text-brand-red text-sm font-semibold tracking-wide">Türkiye'nin #1 Disksiz Sistem Çözüm Ortağı</span>
         </div>
