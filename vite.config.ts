@@ -12,6 +12,12 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   base: './',
   plugins: [react(), tailwindcss(), viteSingleFile()],
+  server: {
+    proxy: {
+      '/api': 'http://localhost:8787',
+      '/uploads': 'http://localhost:8787',
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),

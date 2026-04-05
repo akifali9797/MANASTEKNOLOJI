@@ -1,5 +1,8 @@
 node_modules/
 dist/
+server-data/
+public/uploads/
+storage/
 .DS_Store
 *.log
 npm-debug.log*

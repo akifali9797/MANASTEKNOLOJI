@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: manas-teknoloji-admin
+    runtime: node
+    plan: starter
+    region: frankfurt
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_VERSION
+        value: 22.16.0
+      - key: STORAGE_DIR
+        value: /opt/render/project/src/storage
+    disk:
+      name: manas-storage
+      mountPath: /opt/render/project/src/storage
+      sizeGB: 1

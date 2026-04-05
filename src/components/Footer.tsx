@@ -114,6 +114,8 @@ export default function Footer() {
                 <img
                   src={`${import.meta.env.BASE_URL}images/logo.png`}
                   alt="Manas Teknoloji logosu"
+                  loading="lazy"
+                  decoding="async"
                   className="h-12 w-12 object-contain p-1"
                 />
               </div>

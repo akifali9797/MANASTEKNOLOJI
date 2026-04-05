@@ -1,21 +1,9 @@
 import { useEffect } from 'react';
-
-const projectGroups = [
-  {
-    title: 'E-Spor Merkezleri',
-    description: 'Kurulumunu yaptığımız salonlar, altyapı tasarımları ve uygulama detayları burada yer alacak.',
-  },
-  {
-    title: 'Disksiz Sistem Projeleri',
-    description: 'PXE, merkezi imaj, performans optimizasyonu ve ölçeklenebilir yönetim projelerini ekleyeceğiz.',
-  },
-  {
-    title: 'Kurumsal Dönüşüm İşleri',
-    description: 'Üniversite, laboratuvar ve işletmeler için tamamladığımız dönüşüm örneklerini bu alanda paylaşacağız.',
-  },
-];
+import { useSiteContent } from '../utils/siteContent';
 
 export default function WorksPage() {
+  const { content } = useSiteContent();
+
   useEffect(() => {
     document.title = 'Çalışmalarımız | Manas Teknoloji';
   }, []);
@@ -66,25 +54,28 @@ export default function WorksPage() {
             <div className="mx-auto max-w-4xl text-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-brand-red/10 px-4 py-1.5">
                 <span className="h-2 w-2 rounded-full bg-brand-red animate-pulse" />
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-red">Çalışmalarımız</span>
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-red">{content.works.eyebrow}</span>
               </div>
 
               <h1 className="mt-6 text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
-                Tamamladığımız <span className="gradient-text">projeleri</span> bu alanda sergileyeceğiz.
+                {content.works.title}
               </h1>
 
               <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-brand-gray sm:text-lg">
-                Bu sayfa artık hazır. E-spor merkezi kurulumları, disksiz sistem projeleri ve kurumsal teknoloji dönüşümlerini burada tek tek ekleyebiliriz.
+                {content.works.description}
               </p>
             </div>
           </section>
 
           <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
             <div className="grid gap-5 lg:grid-cols-3">
-              {projectGroups.map((group) => (
+              {content.works.items.map((group) => (
                 <article key={group.title} className="glass-card rounded-2xl p-6 sm:p-7">
                   <div className="mb-5 inline-flex rounded-xl bg-brand-red/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-brand-red">
-                    Yakında
+                    {group.status}
+                  </div>
+                  <div className="mb-5 overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/5">
+                    <img src={group.image} alt={group.title} loading="lazy" decoding="async" className="h-52 w-full object-cover" />
                   </div>
                   <h2 className="text-2xl font-black text-white">{group.title}</h2>
                   <p className="mt-4 text-sm leading-7 text-brand-gray sm:text-base">
@@ -97,17 +88,11 @@ export default function WorksPage() {
 
           <section className="mx-auto max-w-5xl px-4 pb-20 sm:px-6 lg:px-8">
             <div className="glass-card rounded-3xl p-8 text-center sm:p-10">
-              <h2 className="text-3xl font-black text-white sm:text-4xl">İlk işleri birlikte yerleştirelim</h2>
+              <h2 className="text-3xl font-black text-white sm:text-4xl">{content.works.ctaTitle}</h2>
               <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-brand-gray sm:text-base">
-                Hazır olduğunda her proje için görsel, kısa açıklama, kullanılan teknoloji ve sonuç başlıklarıyla bu sayfayı gerçek referans sayfasına dönüştüreceğim.
+                {content.works.ctaDescription}
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <a
-                  href="./index.html#contact"
-                  className="inline-flex items-center gap-2 rounded-xl bg-brand-red px-6 py-3 text-sm font-bold text-white transition-all duration-300 hover:bg-brand-red-dark hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-red/25"
-                >
-                  İçerik Gönder
-                </a>
                 <a
                   href="./index.html#hero"
                   className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-brand-red hover:bg-white/5"

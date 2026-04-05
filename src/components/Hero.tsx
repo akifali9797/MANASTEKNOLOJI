@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSiteContent } from '../utils/siteContent';
 
 const stats = [
   { value: 3000, suffix: '+', label: 'Kurulan Merkez' },
@@ -49,13 +50,17 @@ function AnimatedCounter({ target, suffix }: { target: number; suffix: string })
 }
 
 export default function Hero() {
+  const { content } = useSiteContent();
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={`${import.meta.env.BASE_URL}images/hero-bg.jpg`}
+          src={content.hero.backgroundImage}
           alt="E-Spor Merkezi"
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover"
         />
         <div className="hero-overlay absolute inset-0" />
@@ -77,15 +82,14 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 animate-fade-in-up delay-100">
-          E-Spor Merkezleri &<br />
-          <span className="gradient-text">NetKafem sistemine</span><br />
-          Kurumsal Çözümler
+          {content.hero.titleLine1}<br />
+          <span className="gradient-text">{content.hero.titleHighlight}</span><br />
+          {content.hero.titleLine3}
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl text-brand-gray max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up delay-200">
-          İnternet kafeler, e-spor salonları ve eğitim laboratuvarları için
-          profesyonel disksiz sistem altyapısı ve network çözümleri sunuyoruz.
+          {content.hero.subtitle}
         </p>
 
         {/* CTA Buttons */}
@@ -107,7 +111,7 @@ export default function Hero() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            Çalışmalarımız
+            {content.hero.secondaryButtonLabel}
           </a>
         </div>
 

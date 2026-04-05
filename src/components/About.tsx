@@ -1,3 +1,5 @@
+import { useSiteContent } from '../utils/siteContent';
+
 const features = [
   {
     icon: (
@@ -38,6 +40,8 @@ const features = [
 ];
 
 export default function About() {
+  const { content } = useSiteContent();
+
   return (
     <section id="about" className="relative py-24 lg:py-32 bg-brand-dark overflow-hidden">
       {/* Background Pattern */}
@@ -54,8 +58,10 @@ export default function About() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden">
               <img
-                src={`${import.meta.env.BASE_URL}images/about-bg.jpg`}
+                src={content.about.backgroundImage}
                 alt="Manas Teknoloji Altyapı"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-[400px] lg:h-[500px] object-cover rounded-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent" />
@@ -78,25 +84,18 @@ export default function About() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
-              Türkiye'nin{' '}
-              <span className="gradient-text">E-Spor</span> ve{' '}
-              <span className="gradient-text">Disksiz Teknoloji</span>{' '}
-              Öncüsü
+              {content.about.titlePrefix}{' '}
+              <span className="gradient-text">{content.about.titleHighlightOne}</span> ve{' '}
+              <span className="gradient-text">{content.about.titleHighlightTwo}</span>{' '}
+              {content.about.titleSuffix}
             </h2>
 
             <p className="text-brand-gray text-lg leading-relaxed mb-8">
-              Manas Teknoloji 2007 yılında Ar-Ge amaçlı açtığı ilk internet kafesiyle sektöre
-              giriş yapmıştır. Projeleriyle birçok başarılı girişimciye ilham kaynağı olmuş,
-              internet kafeciliği daha modern hale getirmiş, sektörü ayakta tutacak dokunuşlar
-              sayesinde yüzlerce insanı sektöre çekerek istihdam yaratmıştır.
+              {content.about.paragraphOne}
             </p>
 
             <p className="text-brand-gray leading-relaxed mb-10">
-              Türkiye'nin ilk yiyecek ve içecek ağırlıklı internet kafesini 2009 yılında açarak
-              ayda yaklaşık 100.000 dolar ciroyla sektöre olan bakış açısını değiştirmeyi
-              başarmıştır. Bu minvalde kurumsal işletmeler, e-spor salonları ve üniversitelerde
-              disksiz sistem kurulumları ile dizi, film ve program arşivi desteği sunmaya devam
-              etmektedir.
+              {content.about.paragraphTwo}
             </p>
 
             {/* Feature Cards */}

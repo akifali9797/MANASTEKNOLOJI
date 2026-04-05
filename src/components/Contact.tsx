@@ -1,4 +1,40 @@
+import { FormEvent, useMemo, useState } from 'react';
+
+const initialForm = {
+  name: '',
+  business: '',
+  phone: '',
+  city: '',
+  need: '',
+};
+
 export default function Contact() {
+  const [form, setForm] = useState(initialForm);
+  const [formStatus, setFormStatus] = useState('');
+
+  const whatsappMessage = useMemo(() => {
+    return [
+      'Merhaba, Manas Teknoloji ile teklif görüşmesi yapmak istiyorum.',
+      `Ad Soyad: ${form.name || '-'}`,
+      `İşletme: ${form.business || '-'}`,
+      `Telefon: ${form.phone || '-'}`,
+      `Şehir: ${form.city || '-'}`,
+      `İhtiyaç: ${form.need || '-'}`,
+    ].join('\n');
+  }, [form]);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!form.name || !form.phone || !form.need) {
+      setFormStatus('Ad, telefon ve ihtiyaç alanlarını doldurman gerekiyor.');
+      return;
+    }
+
+    setFormStatus('Talep WhatsApp üzerinden açılıyor. Mesajı göndererek süreci başlatabilirsin.');
+    window.open(`https://wa.me/905354302875?text=${encodeURIComponent(whatsappMessage)}`, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="contact" className="relative py-24 lg:py-32 bg-brand-darker overflow-hidden">
       {/* Red Glow */}
@@ -105,6 +141,89 @@ export default function Contact() {
               </div>
             </div>
           </a>
+        </div>
+
+        <div className="mt-12 sm:mt-16 glass-card rounded-3xl p-6 text-left sm:p-8">
+          <div className="mb-6 sm:mb-8">
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-brand-red/10 px-4 py-1.5">
+              <span className="text-brand-red text-xs font-bold tracking-wider uppercase">Hızlı Teklif</span>
+            </div>
+            <h3 className="mt-4 text-2xl font-black text-white sm:text-3xl">İhtiyacını gönder, doğru çözümle dönelim</h3>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-brand-gray sm:text-base">
+              Formu doldurduğunda teklif isteğin WhatsApp mesajı olarak hazırlanır. Böylece hızlıca görüşmeye başlayabiliriz.
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2">
+            <label className="block">
+              <span className="mb-2 block text-sm font-semibold text-white">Ad Soyad</span>
+              <input
+                value={form.name}
+                onChange={(event) => setForm({ ...form, name: event.target.value })}
+                className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors focus:border-brand-red"
+                placeholder="Adınızı yazın"
+              />
+            </label>
+            <label className="block">
+              <span className="mb-2 block text-sm font-semibold text-white">İşletme / Kurum</span>
+              <input
+                value={form.business}
+                onChange={(event) => setForm({ ...form, business: event.target.value })}
+                className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors focus:border-brand-red"
+                placeholder="İşletme adını yazın"
+              />
+            </label>
+            <label className="block">
+              <span className="mb-2 block text-sm font-semibold text-white">Telefon</span>
+              <input
+                type="tel"
+                value={form.phone}
+                onChange={(event) => setForm({ ...form, phone: event.target.value })}
+                className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors focus:border-brand-red"
+                placeholder="05xx xxx xx xx"
+              />
+            </label>
+            <label className="block">
+              <span className="mb-2 block text-sm font-semibold text-white">Şehir</span>
+              <input
+                value={form.city}
+                onChange={(event) => setForm({ ...form, city: event.target.value })}
+                className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors focus:border-brand-red"
+                placeholder="Örn. İstanbul"
+              />
+            </label>
+            <label className="block sm:col-span-2">
+              <span className="mb-2 block text-sm font-semibold text-white">İhtiyaç detayı</span>
+              <textarea
+                value={form.need}
+                onChange={(event) => setForm({ ...form, need: event.target.value })}
+                rows={5}
+                className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors focus:border-brand-red"
+                placeholder="Disksiz sistem, e-spor altyapısı, ağ kurulumu veya teknik destek ihtiyacını yazın"
+              />
+            </label>
+
+            <div className="sm:col-span-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm text-brand-gray">İstersen formu doldurup doğrudan WhatsApp mesajı oluşturabilirsin.</p>
+                {formStatus ? <p className="mt-2 text-sm text-brand-red">{formStatus}</p> : null}
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <button
+                  type="submit"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-brand-red px-6 py-3 text-sm font-bold text-white transition-all duration-300 hover:bg-brand-red-dark hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-red/25"
+                >
+                  WhatsApp ile Gönder
+                </button>
+                <a
+                  href={`mailto:manasteknoloji@icloud.com?subject=${encodeURIComponent('Teklif Talebi')}&body=${encodeURIComponent(whatsappMessage)}`}
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-brand-red hover:bg-white/5"
+                >
+                  E-posta Taslağı Aç
+                </a>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </section>

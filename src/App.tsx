@@ -3,15 +3,23 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
 import Solutions from './components/Solutions';
+import TrustSection from './components/TrustSection';
+import ProcessSection from './components/ProcessSection';
+import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WorksPage from './components/WorksPage';
+import AdminPage from './components/AdminPage';
 
 export default function App() {
-  const isWorksPage = new URLSearchParams(window.location.search).get('sayfa') === 'calismalarimiz';
+  const activePage = new URLSearchParams(window.location.search).get('sayfa');
 
-  if (isWorksPage) {
+  if (activePage === 'calismalarimiz') {
     return <WorksPage />;
+  }
+
+  if (activePage === 'admin') {
+    return <AdminPage />;
   }
 
   return (
@@ -21,6 +29,9 @@ export default function App() {
       <About />
       <Services />
       <Solutions />
+      <TrustSection />
+      <ProcessSection />
+      <FAQ />
       <Contact />
       <Footer />
     </div>
