@@ -69,9 +69,6 @@ export default function About() {
                 <div className="text-sm font-semibold text-brand-gray">Deneyim</div>
               </div>
             </div>
-
-            {/* Decorative Element */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-brand-red/20 rounded-2xl" />
           </div>
 
           {/* Right - Content */}
